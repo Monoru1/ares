@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { playfair, inter } from "@/lib/fonts";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { RouteScrollReset } from "@/components/providers/RouteScrollReset";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBookingBar } from "@/components/layout/MobileBookingBar";
@@ -44,6 +45,7 @@ export default function RootLayout({
     >
       <body className="bg-void text-ivory antialiased">
         <SmoothScroll>
+          <RouteScrollReset />
           <Navbar />
           {children}
           <Footer />
