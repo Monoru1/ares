@@ -34,15 +34,15 @@ export function Navbar() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
           scrolled
-            ? "border-b border-ivory/10 bg-void/80 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent",
+            ? "border-b border-ivory/10 bg-void/82 backdrop-blur-md"
+            : "border-b border-transparent bg-gradient-to-b from-void/60 to-transparent",
         )}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10 lg:py-5">
           <Link
             href="/"
-            className="flex items-baseline gap-1 font-display text-xl tracking-[0.3em] text-ivory"
-            aria-label={`${site.name} — home`}
+            className="flex items-baseline gap-1 font-display text-xl tracking-[0.3em] text-ivory sm:text-2xl"
+            aria-label={`${site.name} — accueil`}
           >
             {site.wordmark}
             <span className="text-gold">.</span>
@@ -65,11 +65,12 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="md:hidden"
-            aria-label="Open menu"
+            className="inline-flex items-center gap-3 rounded-full border border-ivory/12 bg-void/20 px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-ivory/70 backdrop-blur-sm transition-colors hover:text-ivory md:hidden"
+            aria-label="Ouvrir le menu"
             aria-expanded={open}
           >
-            <Menu className="h-6 w-6 text-ivory" strokeWidth={1.25} />
+            Menu
+            <Menu className="h-5 w-5 text-ivory" strokeWidth={1.25} />
           </button>
         </nav>
       </header>
@@ -91,9 +92,11 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                aria-label="Close menu"
+                className="inline-flex items-center gap-3 rounded-full border border-ivory/10 px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-ivory/70"
+                aria-label="Fermer le menu"
               >
-                <X className="h-6 w-6 text-ivory" strokeWidth={1.25} />
+                Fermer
+                <X className="h-5 w-5 text-ivory" strokeWidth={1.25} />
               </button>
             </div>
 
@@ -108,7 +111,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="block py-3 font-display text-4xl text-ivory/90"
+                    className="block border-b border-ivory/10 py-4 font-display text-[clamp(2.6rem,13vw,4.4rem)] leading-none text-ivory/90"
                   >
                     {item.label}
                   </Link>
