@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function resetScrollPosition() {
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -15,11 +15,10 @@ function resetScrollPosition() {
 
 export function RouteScrollReset() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     resetScrollPosition();
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
 }
