@@ -22,33 +22,29 @@ export default function AboutPage() {
         eyebrow={about.header.eyebrow}
         title={about.header.title}
         intro={about.header.intro}
+        image={media(about.portrait.image, 1400)}
+        imageAlt={about.portrait.alt}
+        meta="Elias Moreau · Photographe depuis 12 ans"
       />
 
-      {/* Portrait + philosophie */}
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10 lg:pb-32">
         <div className="grid items-stretch gap-10 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-6">
-            <div className="relative aspect-[4/5] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[560px]">
-              <Image
-                src={media(about.portrait.image, 1400)}
-                alt={about.portrait.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+          <Reveal className="lg:col-span-5">
+            <div className="border-t border-gold/30 pt-6">
+              <p className="text-[11px] uppercase tracking-[0.3em] text-gold">
+                Ma position
+              </p>
+              <blockquote className="mt-7 font-display text-3xl leading-snug text-ivory lg:text-4xl">
+                “{about.philosophy.quote}”
+              </blockquote>
             </div>
           </Reveal>
 
-          <div className="lg:col-span-6 lg:flex lg:flex-col lg:justify-center">
-            <Reveal>
-              <blockquote className="font-display text-3xl leading-snug text-ivory lg:text-4xl">
-                “{about.philosophy.quote}”
-              </blockquote>
-            </Reveal>
-            <div className="mt-8 space-y-5">
+          <div className="lg:col-span-7 lg:flex lg:flex-col lg:justify-center">
+            <div className="space-y-5">
               {about.philosophy.body.map((p, i) => (
                 <Reveal key={i} delay={0.05 * (i + 1)}>
-                  <p className="max-w-xl text-base leading-relaxed text-ivory/60">
+                  <p className="max-w-2xl text-base leading-relaxed text-ivory/60">
                     {p}
                   </p>
                 </Reveal>
@@ -73,7 +69,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Ce que je regarde pendant une séance */}
       <section className="border-t border-ivory/10 bg-anthracite/20">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
@@ -103,7 +98,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Ce que je refuse / promets */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
           <Reveal>
