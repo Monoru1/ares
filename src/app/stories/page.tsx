@@ -20,7 +20,7 @@ export default function StoriesPage() {
         title="Histoires photo"
         intro="Derrière chaque série, il y a une journée, des gens et une lumière. Quelques reportages, racontés sans en faire trop."
         image={media(cover.cover, 1400)}
-        imageAlt={cover.alt}
+        imageAlt={cover.title}
         meta="Reportages réels · Mariage · Portrait · Famille"
       />
       <div className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
