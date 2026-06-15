@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Check, Plus } from "lucide-react";
 import { booking } from "@/data/booking";
 import { experience } from "@/data/home";
+import { galleryHero } from "@/data/gallery";
 import { cn } from "@/lib/utils/cn";
+import { media } from "@/lib/cloudinary";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { BookingForm } from "@/components/booking/BookingForm";
@@ -20,11 +22,13 @@ export default function BookingPage() {
         eyebrow={booking.header.eyebrow}
         title={booking.header.title}
         intro={booking.header.intro}
+        image={media(galleryHero.image, 1400)}
+        imageAlt={galleryHero.alt}
+        meta="Premier échange gratuit · Réponse sous 24 h"
       />
 
-      {/* Infos pratiques */}
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
-        <div className="grid gap-x-10 gap-y-8 border border-ivory/10 bg-anthracite/20 p-8 sm:grid-cols-2 lg:grid-cols-3 lg:p-10">
+        <div className="grid gap-x-10 gap-y-8 border border-ivory/10 bg-anthracite/20 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-3 lg:p-10">
           {booking.practical.map((item, i) => (
             <Reveal key={item.label} delay={0.03 * i}>
               <div>
@@ -40,7 +44,6 @@ export default function BookingPage() {
         </div>
       </section>
 
-      {/* Formules */}
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10 lg:pb-32">
         <Reveal>
           <h2 className="mb-12 font-display text-3xl text-ivory lg:text-4xl">
@@ -52,7 +55,7 @@ export default function BookingPage() {
             <Reveal key={pkg.name} delay={0.06 * i}>
               <div
                 className={cn(
-                  "flex h-full flex-col p-8",
+                  "flex h-full flex-col p-7 sm:p-8",
                   pkg.featured
                     ? "border border-gold/50 bg-gold/[0.04]"
                     : "border border-ivory/10",
@@ -92,7 +95,6 @@ export default function BookingPage() {
         </p>
       </section>
 
-      {/* Comment ça se passe */}
       <section className="border-t border-ivory/10 bg-anthracite/20">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <Reveal>
@@ -118,7 +120,6 @@ export default function BookingPage() {
         </div>
       </section>
 
-      {/* Avant de réserver */}
       <section className="border-t border-ivory/10">
         <div className="mx-auto max-w-3xl px-6 py-20 lg:py-24">
           <Reveal>
@@ -132,7 +133,6 @@ export default function BookingPage() {
         </div>
       </section>
 
-      {/* Formulaire */}
       <section className="mx-auto max-w-3xl px-6 pb-24 lg:pb-32">
         <Reveal>
           <h2 className="font-display text-3xl text-ivory lg:text-4xl">
@@ -155,7 +155,6 @@ export default function BookingPage() {
         </Reveal>
       </section>
 
-      {/* FAQ */}
       <section className="border-t border-ivory/10">
         <div className="mx-auto max-w-3xl px-6 py-24 lg:py-28">
           <Reveal>
