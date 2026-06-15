@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { StoryFeature } from "@/components/sections/StoryFeature";
 import { stories } from "@/data/stories";
+import { media } from "@/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Histoires",
@@ -10,12 +11,17 @@ export const metadata: Metadata = {
 };
 
 export default function StoriesPage() {
+  const cover = stories[0];
+
   return (
     <main>
       <PageHeader
         eyebrow="Le magazine"
-        title="Histoires photographiques"
-        intro="Derrière chaque série, il y a une journée, des gens et une lumière. Voici quelques-unes de ces histoires, racontées en images."
+        title="Histoires photo"
+        intro="Derrière chaque série, il y a une journée, des gens et une lumière. Quelques reportages, racontés sans en faire trop."
+        image={media(cover.cover, 1400)}
+        imageAlt={cover.alt}
+        meta="Reportages réels · Mariage · Portrait · Famille"
       />
       <div className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
         {stories.map((story, i) => (
