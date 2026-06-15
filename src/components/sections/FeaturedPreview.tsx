@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { featured } from "@/data/home";
+import { featured, featuredSection } from "@/data/home";
 import { media } from "@/lib/cloudinary";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaLink } from "@/components/ui/CtaLink";
@@ -51,14 +51,14 @@ export function FeaturedPreview() {
           <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-gold">
-                Selected work
+                {featuredSection.eyebrow}
               </p>
               <h2 className="max-w-xl font-display text-4xl leading-tight text-ivory lg:text-5xl">
-                A handful of stories from the collection.
+                {featuredSection.title}
               </h2>
             </div>
-            <CtaLink href="/gallery" variant="ghost">
-              View full gallery
+            <CtaLink href={featuredSection.cta.href} variant="ghost">
+              {featuredSection.cta.label}
             </CtaLink>
           </div>
         </Reveal>

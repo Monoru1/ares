@@ -69,9 +69,9 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-2 border-t border-ivory/10 pt-6 text-xs text-ivory/40 sm:flex-row sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. Tous droits réservés.
           </p>
-          <p>Crafted with restraint in Paris.</p>
+          <p>Conçu avec retenue à Paris.</p>
         </div>
       </div>
     </footer>

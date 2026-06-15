@@ -1,17 +1,17 @@
 export const site = {
-  name: "Ares Studio",
-  wordmark: "ARES",
-  signature: "Luxury photography for timeless stories.",
-  email: "hello@aresstudio.com",
-  location: "Paris — available worldwide",
+  name: "ARÈS Studio",
+  wordmark: "ARÈS",
+  signature: "Garder ce que le temps essaie d'effacer.",
+  email: "contact@aresstudio.fr",
+  location: "Paris — disponible partout",
   social: [
     { label: "Instagram", href: "https://instagram.com" },
     { label: "Behance", href: "https://behance.net" },
   ],
   nav: [
-    { label: "Gallery", href: "/gallery" },
-    { label: "Stories", href: "/stories" },
-    { label: "About", href: "/about" },
-    { label: "Booking", href: "/booking" },
+    { label: "Galerie", href: "/gallery" },
+    { label: "Histoires", href: "/stories" },
+    { label: "À propos", href: "/about" },
+    { label: "Réserver", href: "/booking" },
   ],
 } as const;

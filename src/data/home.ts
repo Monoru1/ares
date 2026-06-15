@@ -1,53 +1,59 @@
 export const hero = {
-  eyebrow: "Ares Studio — est. 2014",
-  titleLines: ["Every frame", "tells a story."],
+  eyebrow: "ARÈS Studio — depuis 2014",
+  titleLines: ["Chaque image garde", "ce que le temps", "essaie d'effacer."],
   intro:
-    "Wedding, portrait and editorial photography, crafted with cinematic precision.",
-  primary: { label: "Explore the collection", href: "/gallery" },
-  secondary: { label: "Book a session", href: "/booking" },
+    "ARÈS Studio capture les mariages, les portraits et les instants rares avec une approche cinématographique, discrète et profondément humaine.",
+  primary: { label: "Explorer la galerie", href: "/gallery" },
+  secondary: { label: "Réserver une séance", href: "/booking" },
   image: "https://images.unsplash.com/photo-1519741497674-611481863552",
-  imageAlt: "A couple embracing in soft evening light",
+  imageAlt: "Un couple enlacé dans la lumière douce du soir",
 };
 
 export const manifesto = {
-  eyebrow: "The eye behind Ares",
+  eyebrow: "Derrière l'objectif",
   quote:
-    "I don't simply capture images. I preserve atmospheres, gestures, silences and the invisible tension of a moment before it disappears.",
-  body: "Every commission begins with a conversation and ends with a body of work made to outlive the day it documents. Light, restraint and patience — nothing rushed, nothing loud.",
+    "Je ne me contente pas de prendre des photos. Je préserve des atmosphères, des gestes, des silences — la tension invisible d'un instant juste avant qu'il disparaisse.",
+  body: "Chaque commande commence par une conversation et se termine par un ensemble d'images pensées pour survivre au jour qu'elles racontent. De la lumière, de la retenue, de la patience. Rien de pressé, rien de bruyant.",
   image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-  imageAlt: "Portrait of the photographer in available light",
-  cta: { label: "Read the full story", href: "/about" },
+  imageAlt: "Portrait du photographe en lumière naturelle",
+  cta: { label: "Découvrir l'histoire", href: "/about" },
+};
+
+export const featuredSection = {
+  eyebrow: "Sélection",
+  title: "Quelques histoires extraites de la collection.",
+  cta: { label: "Voir toute la galerie", href: "/gallery" },
 };
 
 export const featured = [
   {
-    title: "Wedding in Provence",
-    category: "Wedding",
+    title: "Mariage en Provence",
+    category: "Mariage",
     location: "Gordes, France",
     year: "2024",
     image: "https://images.unsplash.com/photo-1606800052052-a08af7148866",
-    alt: "Bride and groom at golden hour in a Provence vineyard",
+    alt: "Mariés au coucher du soleil dans un vignoble de Provence",
   },
   {
-    title: "Editorial — Maison Noir",
-    category: "Fashion",
+    title: "Éditorial — Maison Noir",
+    category: "Mode",
     location: "Paris, France",
     year: "2024",
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-    alt: "Editorial fashion portrait in dramatic light",
+    alt: "Portrait de mode éditorial en lumière contrastée",
   },
   {
-    title: "Portrait Sessions",
+    title: "Séances portrait",
     category: "Portrait",
     location: "Studio, Paris",
     year: "2023",
     image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-    alt: "Studio portrait of a woman in soft shadow",
+    alt: "Portrait studio d'une femme dans une ombre douce",
   },
 ] as const;
 
 export const closing = {
-  line: "Let's create something timeless.",
-  sub: "Limited commissions each season. Tell me about your story.",
-  cta: { label: "Book a session", href: "/booking" },
+  line: "Créons quelque chose qui traverse le temps.",
+  sub: "Quelques séances seulement par saison. Parlez-moi de votre histoire.",
+  cta: { label: "Réserver une séance", href: "/booking" },
 };
