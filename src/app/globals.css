@@ -54,3 +54,14 @@ html.lenis body { height: auto; }
 ::-webkit-scrollbar-track { background: var(--color-void); }
 ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* Hero — slow cinematic push-in (Ken Burns) */
+@keyframes kenburns {
+  from { transform: scale(1.001); }
+  to { transform: scale(1.09); }
+}
+.hero-kenburns { animation: kenburns 24s ease-out forwards; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns { animation: none; }
+}
