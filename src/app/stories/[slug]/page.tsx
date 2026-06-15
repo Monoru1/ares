@@ -6,7 +6,6 @@ import { ArrowLeft } from "lucide-react";
 import { getStory, stories } from "@/data/stories";
 import { media } from "@/lib/cloudinary";
 import { Reveal } from "@/components/ui/Reveal";
-import { ViewfinderFrame } from "@/components/ui/ViewfinderFrame";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -38,7 +37,6 @@ export default async function StoryPage({ params }: Params) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-void/50 via-void/20 to-void" />
-        <ViewfinderFrame inset={20} size={26} />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-end px-6 pb-16 lg:px-10">
           <p className="mb-5 text-[11px] uppercase tracking-[0.3em] text-gold">
             {story.category} · {story.location}

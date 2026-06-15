@@ -1,59 +1,90 @@
+const U = "https://images.unsplash.com/";
+
 export const hero = {
-  eyebrow: "ARÈS Studio — depuis 2014",
-  titleLines: ["Chaque image garde", "ce que le temps", "essaie d'effacer."],
+  eyebrow: "Elias Moreau — Photographe",
+  titleLines: ["Je photographie les gens", "comme ils sont."],
   intro:
-    "ARÈS Studio capture les mariages, les portraits et les instants rares avec une approche cinématographique, discrète et profondément humaine.",
-  primary: { label: "Explorer la galerie", href: "/gallery" },
+    "Pas comme ils essaient de poser. Mariages, portraits et événements — en Normandie, à Paris et partout en France sur demande.",
+  primary: { label: "Voir la galerie", href: "/gallery" },
   secondary: { label: "Réserver une séance", href: "/booking" },
-  image: "https://images.unsplash.com/photo-1519741497674-611481863552",
-  imageAlt: "Un couple enlacé dans la lumière douce du soir",
+  image: U + "photo-1519741497674-611481863552",
+  imageAlt: "Un couple lors d'un mariage, en lumière naturelle",
 };
 
-export const manifesto = {
-  eyebrow: "Derrière l'objectif",
-  quote:
-    "Je ne me contente pas de prendre des photos. Je préserve des atmosphères, des gestes, des silences — la tension invisible d'un instant juste avant qu'il disparaisse.",
-  body: "Chaque commande commence par une conversation et se termine par un ensemble d'images pensées pour survivre au jour qu'elles racontent. De la lumière, de la retenue, de la patience. Rien de pressé, rien de bruyant.",
-  image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-  imageAlt: "Portrait du photographe en lumière naturelle",
-  cta: { label: "Découvrir l'histoire", href: "/about" },
+export const approach = {
+  eyebrow: "Ma façon de travailler",
+  title: "Des images simples, fortes, livrées proprement.",
+  intro:
+    "Pas de mise en scène inutile. La bonne lumière, le bon moment, et une vraie attention aux détails. Avant la séance on discute, pendant je guide quand il faut, après vous recevez une galerie claire, prête à partager.",
+  points: [
+    {
+      title: "Aucune pose forcée",
+      text: "Je guide juste assez pour que vous restiez vous-même. Le reste du temps, je me fais oublier.",
+    },
+    {
+      title: "Livré sous 10 à 21 jours",
+      text: "Galerie privée en ligne, optimisée pour l'impression et le partage. Pas de mois d'attente.",
+    },
+    {
+      title: "Un seul interlocuteur",
+      text: "De la première discussion à la livraison, c'est moi du début à la fin. Jamais de sous-traitance.",
+    },
+  ],
 };
 
 export const featuredSection = {
-  eyebrow: "Sélection",
-  title: "Quelques histoires extraites de la collection.",
+  eyebrow: "Aperçu",
+  title: "Quelques images récentes.",
   cta: { label: "Voir toute la galerie", href: "/gallery" },
 };
 
 export const featured = [
   {
-    title: "Mariage en Provence",
+    title: "Cérémonie en extérieur",
     category: "Mariage",
-    location: "Gordes, France",
+    location: "Honfleur",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866",
-    alt: "Mariés au coucher du soleil dans un vignoble de Provence",
+    image: U + "photo-1606800052052-a08af7148866",
+    alt: "Mariés lors d'une cérémonie en extérieur",
   },
   {
-    title: "Éditorial — Maison Noir",
-    category: "Mode",
-    location: "Paris, France",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-    alt: "Portrait de mode éditorial en lumière contrastée",
-  },
-  {
-    title: "Séances portrait",
+    title: "Portrait d'entrepreneur",
     category: "Portrait",
-    location: "Studio, Paris",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-    alt: "Portrait studio d'une femme dans une ombre douce",
+    location: "Paris",
+    year: "2024",
+    image: U + "photo-1500648767791-00dcc994a43e",
+    alt: "Portrait professionnel d'un homme en lumière naturelle",
   },
-] as const;
+  {
+    title: "Séance couple",
+    category: "Couple",
+    location: "Étretat",
+    year: "2024",
+    image: U + "photo-1494774157365-9e04c6720e47",
+    alt: "Couple en bord de mer en fin de journée",
+  },
+];
+
+export const storiesSection = {
+  eyebrow: "Reportages",
+  title: "Quelques séances récentes, racontées.",
+  cta: { label: "Tous les reportages", href: "/stories" },
+};
+
+export const experience = {
+  eyebrow: "Comment ça se passe",
+  title: "Simple, du premier message à la livraison.",
+  steps: [
+    { n: "01", title: "On échange", text: "15 minutes, gratuit, pour cadrer votre projet." },
+    { n: "02", title: "Devis & acompte", text: "Un devis clair. 30 % pour bloquer la date." },
+    { n: "03", title: "La séance", text: "Détendue, sans temps mort. Je m'occupe du reste." },
+    { n: "04", title: "Livraison", text: "Galerie privée en ligne sous 10 à 21 jours." },
+  ],
+  cta: { label: "Voir le détail et les tarifs", href: "/booking" },
+};
 
 export const closing = {
-  line: "Créons quelque chose qui traverse le temps.",
-  sub: "Quelques séances seulement par saison. Parlez-moi de votre histoire.",
+  line: "On en parle ?",
+  sub: "Premier échange gratuit de 15 minutes. Réponse sous 24 h.",
   cta: { label: "Réserver une séance", href: "/booking" },
 };

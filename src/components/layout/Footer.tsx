@@ -11,15 +11,18 @@ export function Footer() {
               {site.wordmark}
               <span className="text-gold">.</span>
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-ivory/50">
-              {site.signature}
+            <p className="mt-3 text-sm text-ivory/70">
+              {site.photographer} — {site.role}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-ivory/45">
+              {site.location}
             </p>
           </div>
 
           <div className="flex flex-col gap-8 sm:flex-row sm:gap-16">
             <div>
               <p className="mb-4 text-[11px] uppercase tracking-[0.25em] text-gold/80">
-                Explore
+                Naviguer
               </p>
               <ul className="space-y-2">
                 {site.nav.map((item) => (
@@ -48,8 +51,15 @@ export function Footer() {
                     {site.email}
                   </a>
                 </li>
-                <li>{site.location}</li>
-                <li className="flex gap-4 pt-2">
+                <li>
+                  <a
+                    href={`tel:${site.phone.replace(/\s/g, "")}`}
+                    className="transition-colors hover:text-ivory"
+                  >
+                    {site.phone}
+                  </a>
+                </li>
+                <li className="pt-2">
                   {site.social.map((s) => (
                     <a
                       key={s.label}
@@ -71,7 +81,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Tous droits réservés.
           </p>
-          <p>Conçu avec retenue à Paris.</p>
+          <p>Premier échange gratuit · Réponse sous 24 h.</p>
         </div>
       </div>
     </footer>

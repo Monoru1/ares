@@ -5,22 +5,15 @@ import { CtaLink } from "@/components/ui/CtaLink";
 export function CtaBand() {
   return (
     <section className="border-t border-ivory/10">
-      <div className="mx-auto max-w-3xl px-6 py-28 text-center lg:py-40">
+      <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
         <Reveal>
-          <span className="mx-auto mb-8 block h-12 w-px bg-gold/50" />
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h2 className="font-display text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-4xl text-ivory lg:text-5xl">
             {closing.line}
           </h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-ivory/60">
             {closing.sub}
           </p>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <div className="mt-12 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <CtaLink href={closing.cta.href}>{closing.cta.label}</CtaLink>
           </div>
         </Reveal>

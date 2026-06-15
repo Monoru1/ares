@@ -10,23 +10,23 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ARÈS Studio — Photographie de luxe",
+    default: "Arès Studio — Elias Moreau, photographe",
     template: "%s — Ares Studio",
   },
   description:
-    "Photographie de luxe pour les histoires qui durent. Mariages, portraits, mode et événements, captés avec une précision cinématographique.",
+    "Elias Moreau, photographe mariage, portrait et événement. Des images simples et fortes, livrées proprement. Normandie, Paris et partout en France.",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "ARÈS Studio",
-    title: "ARÈS Studio — Photographie de luxe",
-    description: "Garder ce que le temps essaie d'effacer.",
+    title: "Arès Studio — Elias Moreau, photographe",
+    description: "Photographe mariage, portrait et événement. Normandie, Paris et partout en France.",
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "ARÈS Studio — Photographie de luxe",
-    description: "Garder ce que le temps essaie d'effacer.",
+    title: "Arès Studio — Elias Moreau, photographe",
+    description: "Photographe mariage, portrait et événement. Normandie, Paris et partout en France.",
   },
 };
 

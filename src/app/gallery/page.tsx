@@ -5,7 +5,7 @@ import { GalleryExperience } from "@/components/gallery/GalleryExperience";
 export const metadata: Metadata = {
   title: "Galerie",
   description:
-    "La collection ARÈS Studio : mariages, portraits, famille, événements, mode et corporate. Une sélection d'images captées avec une précision cinématographique.",
+    "La galerie d'Arès Studio : mariage, portrait, couple, famille, événement et corporate. Filtrez par catégorie et ouvrez une image pour la voir en grand.",
 };
 
 export default function GalleryPage() {
@@ -14,7 +14,7 @@ export default function GalleryPage() {
       <PageHeader
         eyebrow="La collection"
         title="Galerie"
-        intro="Six univers, une même exigence de lumière. Filtrez par catégorie, et ouvrez chaque image pour la voir en grand."
+        intro="Mariage, portrait, couple, famille, événement, corporate. Filtrez par catégorie et ouvrez une image pour la voir en grand."
       />
       <GalleryExperience />
     </main>
