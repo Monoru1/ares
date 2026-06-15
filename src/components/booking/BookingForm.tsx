@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent } from "react";
-import { Check } from "lucide-react";
+import { AlertCircle, Check } from "lucide-react";
 import { booking } from "@/data/booking";
 import { cn } from "@/lib/utils/cn";
 
@@ -13,6 +13,7 @@ type Fields = {
   date: string;
   budget: string;
   message: string;
+  website: string;
 };
 
 const EMPTY: Fields = {
@@ -23,6 +24,7 @@ const EMPTY: Fields = {
   date: "",
   budget: "",
   message: "",
+  website: "",
 };
 
 const labelCls = "mb-2 block text-[11px] uppercase tracking-[0.18em] text-ivory/50";
@@ -32,12 +34,17 @@ const fieldCls =
 export function BookingForm() {
   const [f, setF] = useState<Fields>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof Fields, string>>>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+  const [serverMessage, setServerMessage] = useState("");
+  const [demoMode, setDemoMode] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   const set =
     (k: keyof Fields) =>
-    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
       setF((p) => ({ ...p, [k]: e.target.value }));
+      setErrors((p) => ({ ...p, [k]: undefined }));
+      if (status === "error") setStatus("idle");
+    };
 
   const validate = () => {
     const er: Partial<Record<keyof Fields, string>> = {};
@@ -45,8 +52,8 @@ export function BookingForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email))
       er.email = "Une adresse email valide est requise.";
     if (!f.service) er.service = "Choisissez une prestation.";
-    if (!f.message.trim())
-      er.message = "Dites-moi quelques mots sur votre projet.";
+    if (f.message.trim().length < 12)
+      er.message = "Ajoutez quelques détails sur votre projet.";
     setErrors(er);
     return Object.keys(er).length === 0;
   };
@@ -54,9 +61,31 @@ export function BookingForm() {
   const submit = async () => {
     if (!validate()) return;
     setStatus("sending");
-    // Branchement Resend / Appwrite au prochain lot — succès simulé ici.
-    await new Promise((r) => setTimeout(r, 1100));
-    setStatus("done");
+    setServerMessage("");
+
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(f),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        if (data.errors) setErrors(data.errors);
+        setServerMessage(data.message || "La demande n'a pas pu être envoyée.");
+        setStatus("error");
+        return;
+      }
+
+      setDemoMode(Boolean(data.demo));
+      setServerMessage(data.message || "Demande envoyée. Je reviens vers vous sous 48 heures.");
+      setStatus("done");
+    } catch {
+      setServerMessage("Connexion impossible. Réessayez dans un instant.");
+      setStatus("error");
+    }
   };
 
   if (status === "done") {
@@ -66,17 +95,23 @@ export function BookingForm() {
           <Check className="h-6 w-6 text-gold" strokeWidth={1.5} />
         </span>
         <h3 className="mt-8 font-display text-3xl text-ivory">
-          Demande envoyée
+          {demoMode ? "Demande enregistrée en démo" : "Demande envoyée"}
         </h3>
         <p className="mt-4 max-w-md text-base leading-relaxed text-ivory/60">
-          Merci {f.name.split(" ")[0]}. Je reviens vers vous sous 48 heures pour
-          échanger sur votre projet et fixer une date.
+          Merci {f.name.split(" ")[0]}. {serverMessage || "Je reviens vers vous sous 48 heures pour échanger sur votre projet."}
         </p>
+        {demoMode && (
+          <p className="mt-4 max-w-md border border-ivory/10 bg-ivory/[0.03] px-4 py-3 text-xs leading-relaxed text-ivory/45">
+            Mode démo actif : ajoutez RESEND_API_KEY et RESEND_FROM_EMAIL dans Netlify pour recevoir les demandes par email.
+          </p>
+        )}
         <button
           type="button"
           onClick={() => {
             setF(EMPTY);
             setStatus("idle");
+            setDemoMode(false);
+            setServerMessage("");
           }}
           className="mt-10 text-xs uppercase tracking-[0.18em] text-ivory/60 underline decoration-gold/50 underline-offset-4 transition-colors hover:text-gold"
         >
@@ -88,6 +123,15 @@ export function BookingForm() {
 
   return (
     <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      <input
+        tabIndex={-1}
+        autoComplete="off"
+        value={f.website}
+        onChange={set("website")}
+        className="hidden"
+        aria-hidden="true"
+      />
+
       <div>
         <label htmlFor="name" className={labelCls}>
           Nom complet
@@ -212,6 +256,13 @@ export function BookingForm() {
           <p className="mt-2 text-xs text-gold/90">{errors.message}</p>
         )}
       </div>
+
+      {status === "error" && (
+        <div className="sm:col-span-2 flex gap-3 border border-gold/20 bg-gold/[0.06] px-4 py-3 text-sm leading-relaxed text-ivory/70">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
+          <p>{serverMessage}</p>
+        </div>
+      )}
 
       <div className="sm:col-span-2">
         <button
