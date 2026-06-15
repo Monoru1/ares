@@ -24,23 +24,24 @@ export default function AboutPage() {
         intro={about.header.intro}
       />
 
+      {/* Portrait + philosophie */}
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10 lg:pb-32">
-        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-20">
-          <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
+        <div className="grid items-stretch gap-10 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-6">
+            <div className="relative aspect-[4/5] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[560px]">
               <Image
-                src={media(about.portrait.image, 1200)}
+                src={media(about.portrait.image, 1400)}
                 alt={about.portrait.alt}
                 fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
           </Reveal>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6 lg:flex lg:flex-col lg:justify-center">
             <Reveal>
-              <blockquote className="font-display text-2xl leading-snug text-ivory sm:text-3xl">
+              <blockquote className="font-display text-3xl leading-snug text-ivory lg:text-4xl">
                 “{about.philosophy.quote}”
               </blockquote>
             </Reveal>
@@ -54,7 +55,7 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
               {about.stats.map((stat, i) => (
                 <Reveal key={stat.label} delay={0.04 * i}>
                   <div className="border-t border-gold/30 pt-4">
@@ -72,36 +73,65 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Ce que je regarde pendant une séance */}
       <section className="border-t border-ivory/10 bg-anthracite/20">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-          <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <h2 className="mb-8 font-display text-2xl text-ivory">
-                Ce que je refuse
-              </h2>
-              <ul className="space-y-4">
-                {about.refuses.map((r) => (
-                  <li key={r} className="flex items-start gap-3 text-ivory/70">
-                    <X className="mt-0.5 h-4 w-4 shrink-0 text-ivory/40" strokeWidth={1.5} />
-                    <span className="text-base leading-relaxed">{r}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mb-8 font-display text-2xl text-ivory">
-                Ce que je promets
-              </h2>
-              <ul className="space-y-4">
-                {about.promises.map((p) => (
-                  <li key={p} className="flex items-start gap-3 text-ivory/70">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
-                    <span className="text-base leading-relaxed">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+          <Reveal>
+            <p className="mb-5 text-[11px] uppercase tracking-[0.3em] text-gold">
+              {about.watching.eyebrow}
+            </p>
+            <h2 className="max-w-2xl font-display text-3xl leading-tight text-ivory lg:text-4xl">
+              {about.watching.title}
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/60">
+              {about.watching.intro}
+            </p>
+          </Reveal>
+
+          <div className="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {about.watching.items.map((it, i) => (
+              <Reveal key={it.label} delay={0.04 * i}>
+                <div className="border-t border-ivory/15 pt-5">
+                  <h3 className="font-display text-xl text-ivory">{it.label}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ivory/55">
+                    {it.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Ce que je refuse / promets */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <h2 className="mb-8 font-display text-2xl text-ivory">
+              Ce que je refuse
+            </h2>
+            <ul className="space-y-4">
+              {about.refuses.map((r) => (
+                <li key={r} className="flex items-start gap-3 text-ivory/70">
+                  <X className="mt-0.5 h-4 w-4 shrink-0 text-ivory/40" strokeWidth={1.5} />
+                  <span className="text-base leading-relaxed">{r}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <h2 className="mb-8 font-display text-2xl text-ivory">
+              Ce que je promets
+            </h2>
+            <ul className="space-y-4">
+              {about.promises.map((p) => (
+                <li key={p} className="flex items-start gap-3 text-ivory/70">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
+                  <span className="text-base leading-relaxed">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 

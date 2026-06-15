@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { GalleryHero } from "@/components/gallery/GalleryHero";
 import { GalleryExperience } from "@/components/gallery/GalleryExperience";
 
 export const metadata: Metadata = {
@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <main>
-      <PageHeader
-        eyebrow="La collection"
-        title="Galerie"
-        intro="Mariage, portrait, couple, famille, événement, corporate. Filtrez par catégorie et ouvrez une image pour la voir en grand."
-      />
+      <GalleryHero />
       <GalleryExperience />
     </main>
   );

@@ -3,6 +3,7 @@ import { playfair, inter } from "@/lib/fonts";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MobileBookingBar } from "@/components/layout/MobileBookingBar";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <MobileBookingBar />
         </SmoothScroll>
       </body>
     </html>

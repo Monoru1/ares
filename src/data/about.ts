@@ -29,6 +29,19 @@ export const about = {
     "Une galerie privée livrée sous 10 à 21 jours",
     "Un premier échange gratuit de 15 minutes",
   ],
+  watching: {
+    eyebrow: "Pendant une séance",
+    title: "Ce que je regarde, là où d'autres ne regardent pas.",
+    intro:
+      "Une bonne photo se joue dans les détails que les gens oublient. Voilà ce qui retient mon attention quand je travaille.",
+    items: [
+      { label: "La lumière", text: "D'où elle vient, comment elle tombe sur un visage, le moment où elle est juste." },
+      { label: "Les mains", text: "Elles trahissent tout — la tension, la tendresse, l'hésitation. Je les surveille toujours." },
+      { label: "Les silences", text: "Les secondes entre deux phrases, quand le masque tombe. Souvent les meilleures images." },
+      { label: "Les regards", text: "Entre deux personnes, ou vers le vide. Un regard juste vaut mille poses." },
+      { label: "Les détails", text: "Une alliance, un pli de robe, une larme retenue. Ce qu'on ne revoit qu'en photo." },
+    ],
+  },
   stats: [
     { value: "12 ans", label: "d'expérience" },
     { value: "200+", label: "séances réalisées" },

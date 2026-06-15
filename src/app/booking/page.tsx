@@ -24,7 +24,7 @@ export default function BookingPage() {
 
       {/* Infos pratiques */}
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
-        <div className="grid gap-x-10 gap-y-8 border-t border-ivory/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-10 gap-y-8 border border-ivory/10 bg-anthracite/20 p-8 sm:grid-cols-2 lg:grid-cols-3 lg:p-10">
           {booking.practical.map((item, i) => (
             <Reveal key={item.label} delay={0.03 * i}>
               <div>
@@ -118,8 +118,22 @@ export default function BookingPage() {
         </div>
       </section>
 
+      {/* Avant de réserver */}
+      <section className="border-t border-ivory/10">
+        <div className="mx-auto max-w-3xl px-6 py-20 lg:py-24">
+          <Reveal>
+            <p className="mb-6 text-[11px] uppercase tracking-[0.3em] text-gold">
+              Avant de réserver
+            </p>
+            <p className="font-display text-2xl leading-snug text-ivory lg:text-3xl">
+              {booking.reassure}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Formulaire */}
-      <section className="mx-auto max-w-3xl px-6 py-24 lg:py-32">
+      <section className="mx-auto max-w-3xl px-6 pb-24 lg:pb-32">
         <Reveal>
           <h2 className="font-display text-3xl text-ivory lg:text-4xl">
             Parlez-moi de votre projet
@@ -132,6 +146,13 @@ export default function BookingPage() {
         <div className="mt-14">
           <BookingForm />
         </div>
+        <Reveal>
+          <div className="mt-10 border-l-2 border-gold/40 pl-5">
+            <p className="text-sm leading-relaxed text-ivory/50">
+              <span className="text-ivory/80">Et après ?</span> {booking.afterSend}
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}

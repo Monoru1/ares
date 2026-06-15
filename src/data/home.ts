@@ -11,6 +11,43 @@ export const hero = {
   imageAlt: "Un couple lors d'un mariage, en lumière naturelle",
 };
 
+export const showcase = {
+  line: "Quelques images récentes.",
+  cta: { label: "Voir toute la galerie", href: "/gallery" },
+  big: {
+    image: U + "photo-1606800052052-a08af7148866",
+    alt: "Mariés lors d'une cérémonie en extérieur",
+    caption: "Cérémonie en extérieur — Honfleur",
+  },
+  tall: [
+    {
+      image: U + "photo-1500648767791-00dcc994a43e",
+      alt: "Portrait d'entrepreneur en lumière naturelle",
+      caption: "Portrait — Paris",
+    },
+    {
+      image: U + "photo-1494774157365-9e04c6720e47",
+      alt: "Couple en bord de mer",
+      caption: "Séance couple — Étretat",
+    },
+  ],
+};
+
+export const whatYouSee = {
+  eyebrow: "Ce que vous voyez ici",
+  title: "Des gens, pas des poses.",
+  intro:
+    "Des mariages, des portraits, des familles et des événements. Des images prises sans forcer personne — juste la bonne lumière et le bon moment.",
+  items: [
+    "Mariages & cérémonies",
+    "Portraits & entrepreneurs",
+    "Couples",
+    "Familles & baptêmes",
+    "Événements & soirées",
+    "Corporate & équipes",
+  ],
+};
+
 export const approach = {
   eyebrow: "Ma façon de travailler",
   title: "Des images simples, fortes, livrées proprement.",
@@ -32,38 +69,11 @@ export const approach = {
   ],
 };
 
-export const featuredSection = {
-  eyebrow: "Aperçu",
-  title: "Quelques images récentes.",
-  cta: { label: "Voir toute la galerie", href: "/gallery" },
+export const fullBleed = {
+  image: U + "photo-1519741497674-611481863552",
+  alt: "Un instant de mariage capté en lumière naturelle",
+  line: "Prenez le temps de regarder. Une bonne image ne crie pas toujours.",
 };
-
-export const featured = [
-  {
-    title: "Cérémonie en extérieur",
-    category: "Mariage",
-    location: "Honfleur",
-    year: "2024",
-    image: U + "photo-1606800052052-a08af7148866",
-    alt: "Mariés lors d'une cérémonie en extérieur",
-  },
-  {
-    title: "Portrait d'entrepreneur",
-    category: "Portrait",
-    location: "Paris",
-    year: "2024",
-    image: U + "photo-1500648767791-00dcc994a43e",
-    alt: "Portrait professionnel d'un homme en lumière naturelle",
-  },
-  {
-    title: "Séance couple",
-    category: "Couple",
-    location: "Étretat",
-    year: "2024",
-    image: U + "photo-1494774157365-9e04c6720e47",
-    alt: "Couple en bord de mer en fin de journée",
-  },
-];
 
 export const storiesSection = {
   eyebrow: "Reportages",

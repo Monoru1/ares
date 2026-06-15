@@ -5,6 +5,10 @@ export const booking = {
     intro:
       "Premier échange gratuit de 15 minutes pour cadrer votre projet. Réponse sous 24 h. Un acompte de 30 % bloque la date.",
   },
+  reassure:
+    "Vous n'avez pas besoin d'avoir un brief parfait. Envoyez simplement quelques détails — la date approximative, le type de séance, ce que vous avez en tête — et je vous réponds avec une proposition claire.",
+  afterSend:
+    "Après l'envoi, je reviens vers vous sous 24 h pour caler un appel de 15 minutes. On affine ensemble, je vous envoie un devis, et un acompte de 30 % bloque la date. Aucun engagement avant cet échange.",
   practical: [
     { label: "Disponibilité", value: "Normandie, Paris, et partout en France sur demande" },
     { label: "Délai de livraison", value: "10 à 21 jours selon la prestation" },

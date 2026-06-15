@@ -213,3 +213,19 @@ export const gallery: GalleryItem[] = [
     description: "Reportage sur une journée. L'entreprise telle qu'elle se vit.",
   },
 ];
+
+export const galleryHero = {
+  image: "https://images.unsplash.com/photo-1606800052052-a08af7148866",
+  alt: "Mariés lors d'une cérémonie en extérieur, en lumière dorée",
+  line: "Prenez le temps de regarder. Une bonne image ne crie pas toujours.",
+};
+
+export const categoryBlurbs: Record<Category, string> = {
+  Tout: "Tout le travail, du mariage au corporate.",
+  Mariage: "Cérémonies et réceptions, captées sans interrompre la journée.",
+  Portrait: "Pour un site, un book, ou simplement pour soi.",
+  Couple: "Une heure, sans pose imposée. Juste vous deux.",
+  Famille: "Réunions, baptêmes, nouveau-nés. Naturel, jamais figé.",
+  Événement: "Soirées et réceptions, en reportage discret.",
+  Corporate: "Portraits d'équipe et reportages d'entreprise cohérents.",
+};
