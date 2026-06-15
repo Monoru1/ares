@@ -9,12 +9,19 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+declare global {
+  interface Window {
+    aresLenis?: Lenis;
+  }
+}
+
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
-    // Respect accessibilite : pas de smooth scroll si l'utilisateur le refuse
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    const lenis = new Lenis({ duration: 1.05, smoothWheel: true });
+    window.aresLenis = lenis;
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const raf = (time: number) => lenis.raf(time * 1000);
@@ -24,6 +31,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     return () => {
       gsap.ticker.remove(raf);
       lenis.destroy();
+      delete window.aresLenis;
     };
   }, []);
 
